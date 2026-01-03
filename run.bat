@@ -33,17 +33,9 @@ if not exist "%LOG%" (
 )
 
 if not exist "%DIST%" (
-  curl -L https://jaffleman.freeboxos.fr:26603/share/Z9swzrj1aOKqm25M/dist.zip -o "%temp%\dist.zip" --silent
-  
-  if exist "C:\Program Files\7-Zip\7z.exe" (
-    "C:\Program Files\7-Zip\7z.exe" x "%temp%\dist.zip" -o"%temp%\dist" -y
-  ) else if exist "C:\Program Files (x86)\7-Zip\7z.exe" (
-    "C:\Program Files (x86)\7-Zip\7z.exe" x "%temp%\dist.zip" -o"%temp%\dist" -y
-  ) else (
-    echo 7-Zip is not installed. Please install 7-Zip first.
-    pause >nul
-    exit /b
-  )
+  curl -L https://jaffleman.freeboxos.fr:26603/share/Z9swzrj1aOKqm25M/dist.zip -o "%temp%\dist.zip"
+  powershell -NoProfile -Command "Expand-Archive -Path '%temp%\dist.zip' -DestinationPath '%temp%\dist' -Force"
+  del "%temp%\dist.zip"
 )
 
 goto :main
