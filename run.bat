@@ -318,8 +318,8 @@ echo.
 set /p nvidiachoice=Choose an option ( 1-4 or 5 to go back ):
 if "%nvidiachoice%"=="1" (
   start "" "%DIST%\nvidia\NVCleanstall_1.19.0.exe"
-  start "" "%~dp0src\paint.lnk" "%DIST%\nvidia\2.png"
-  start "" "%~dp0src\paint.lnk" "%DIST%\nvidia\1.png"
+  start "" "mspaint.exe" "%DIST%\nvidia\2.png"
+  start "" "mspaint.exe" "%DIST%\nvidia\1.png"
   pause >nul
 )
 
