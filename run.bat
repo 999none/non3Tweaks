@@ -144,6 +144,7 @@ if /I "%proceed%"=="Y" (
 ) else (
   goto :os
 )
+goto :os
 
 :xos
 echo 1. ISO
@@ -166,17 +167,20 @@ if "%xoschoice%"=="1" (
 ) else (
   goto :os
 )
+goto :os
 
 :ggos
 start "" "%DIST%\os\rufus-4.11.exe"
 echo Click on "SELECT" and search for the GGOS ISO (dist\os\GGOS\)
 pause >nul
+goto :os
 
 :kernelos
 start https://kernelos.org/docs/getting-started/installation/#31-preparacion
 start "" "%DIST%\os\rufus-4.11.exe"
 echo Click on "SELECT" and search for the KERNEL OS ISO (dist\os\KERNELOS\)
 pause >nul
+goto :os
 
 :atomos
 echo 1. ISO
@@ -201,6 +205,7 @@ if "%atomoschoice%"=="1" (
 ) else (
   goto :os
 )
+goto :os
 
 :general
 cls
